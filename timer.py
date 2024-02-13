@@ -1,23 +1,38 @@
 """
-This program is used as an example for MGTC28.
-timer.py is a simple Python script that will allow user to set timer duration.
-Upon timer expiry, user will see the time up meme and sound notification.
-timer.py uses the time library to help keep track of time
+This program creates the Nerve of Steel game, where players stand then the players sit down
+after a certain amount of random time set (5-25 seconds) set by the program
+
 """
-
-
-# This program is timer that counts down
-
-
 import time # The time library has a sleep function that will pause the script for a specifized amount of time
-from PIL import Image # the pillow library makes it easy to display images 
+from PIL import ImageTk# the pillow library makes it easy to display images
+import random as rd #random number generator for our program
+import tkinter as tk #alloiws to open imagebox which contains our image
+from urllib.request import urlopen #reads Image URLs
 
-im = Image.open("times-up.jpeg")
 
-# ask user to enter desired countdown time
-set_time = int(input("Please set your timer in seconds: "))
+def timesUp (): 
+    
+    print ('Times Up! Last to sit down wins!')
+    root = tk.Tk()
+    u = urlopen("https://deadline.com/wp-content/uploads/2023/01/times-up-halt-operations.jpg?w=681&h=383&crop=1")
+    #users may not have the image dowloaded into their system; this code reads an IMGUrl and outputs it in a tKinter box
+    rawData = u.read()
+    u.close()
+    photo = ImageTk.PhotoImage(data = rawData)
+    label = tk.Label(image = photo)
+    label.image = photo
+    label.pack()
+    root.mainloop()
 
-time.sleep(set_time)
+print ('Players Stand!')
+timer = rd.randint(5,25)
+time.sleep(timer)
+timesUp()
 
-im.show()
 
+
+
+
+
+
+ 
