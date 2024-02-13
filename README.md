@@ -19,7 +19,9 @@ Calls the 'timesUP()' function when the timer runs out
 Notes:
 The ImageURL can be replaced to any imageURL on the web with a valid URL, think of it as a placeholder
 
-To learn more about the libraries
+To learn more about the libraries:
+
 Tkinter: https://camo.githubusercontent.com/333875621ea27c95dd039e480184dbead1c93e095f94582c44e10231472a6a4a/68747470733a2f2f6d656469612e6d616b65616d656d652e6f72672f637265617465642f74696d65732d75702d3539323365302e6a7067
+
 Urllib: https://docs.python.org/3/library/urllib.html
 
